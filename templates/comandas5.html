@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static\comandas.css">
+</head>
+<body>
+    <div class="container">
+        <div class="comandas">
+            <div class="mesa">
+              <h2>Mesa 5</h2>
+              <div class="itens">
+                <div class="item">
+                  <span>Refrigerante lata</span>
+                  <input type="number" class="quantidade" value="0">
+                </div>
+                <div class="item">
+                  <span>Chopp</span>
+                  <input type="number" class="quantidade" value="0">
+                </div>
+                <div class="item">
+                    <span>Pastel</span>
+                    <input type="number" class="quantidade" value="0">
+                  </div>
+                  <div class="item">
+                    <span>Pastel Doce</span>
+                    <input type="number" class="quantidade" value="0">
+                  </div>
+                  <div class="item">
+                    <span>Xis</span>
+                    <input type="number" class="quantidade" value="0">
+                  </div>
+                  <div class="item">
+                    <span>Cerveja Garrafa</span>
+                    <input type="number" class="quantidade" value="0">
+                  </div>
+                  <div class="item">
+                    <span>Chopp Garrafa</span>
+                    <input type="number" class="quantidade" value="0">
+                  </div>
+                  <div class="item">
+                    <span>Picadão P</span>
+                    <input type="number" class="quantidade" value="0">
+                  </div>
+                  <div class="item">
+                    <span>Picadão M</span>
+                    <input type="number" class="quantidade" value="0">
+                  </div>
+                  <div class="item">
+                    <span>Picadão G</span>
+                    <input type="number" class="quantidade" value="0">
+                  </div>
+                <!-- Outros itens -->
+              </div>
+              <div class="total">
+                <span>Total: </span>
+                <span class="valor">0.00</span>
+              </div>
+            </div>
+            <!-- Mais mesas -->
+        
+                <!-- Outros itens -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <script>
+        // Selecione todos os elementos de classe "quantidade"
+        const quantidades = document.querySelectorAll('.quantidade');
+
+        // Adicione um ouvinte de evento para cada elemento de classe "quantidade"
+        quantidades.forEach(function (element) {
+          element.addEventListener('input', atualizarTotal);
+        });
+
+        function atualizarTotal() {
+          // Encontre o elemento pai da quantidade (item)
+          const item = this.parentElement;
+
+          // Encontre o elemento pai do item (mesa)
+          const mesa = item.parentElement.parentElement;
+
+          // Selecione o elemento de classe "valor" dentro da mesa
+          const valorElement = mesa.querySelector('.total .valor');
+
+          // Obtenha todas as quantidades dentro da mesa
+          const quantidadesMesa = mesa.querySelectorAll('.quantidade');
+
+          // Inicialize a variável total
+          let total = 0;
+
+          // Calcule o total somando o valor de cada item multiplicado pela quantidade
+          quantidadesMesa.forEach(function (quantidade) {
+            const itemAtual = quantidade.parentElement;
+            const preco = precoItem(itemAtual);
+            const qtd = parseInt(quantidade.value) || 0;
+            total += preco * qtd;
+          });
+
+          // Atualize o elemento "valor" com o total calculado
+          valorElement.textContent = total.toFixed(2);
+        }
+
+        function precoItem(item) {
+          // Defina os preços para cada item com base na lógica da sua aplicação
+          const precos = {
+            'Refrigerante lata': 2.5,
+            'Chopp': 5.0,
+            'Chopp Garrafa': 10.10,
+            // Outros itens e preços
+          };
+
+          // Obtenha o nome do item
+          const nomeItem = item.querySelector('span').textContent;
+
+          // Retorne o preço do item com base no nome
+          return precos[nomeItem] || 0;
+        }
+    </script>
+</body>
+</html>

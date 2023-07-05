@@ -1,0 +1,46 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #000000, #068FFF);
+}
+
+.container {
+    text-align: center;
+}
+
+#form_frente {
+    border: 3px solid #00a2ff;
+    padding: 20px;
+    max-width: 400px; /* Defina a largura máxima do formulário */
+    margin: 0 auto; /* Centralizar horizontalmente */
+    background-color: white;
+}
+
+.nome_atendente, .valor_inicial, input{
+    text-align: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+h1{
+    font-size: 50px;
+    color: white;
+}
+
+button{
+    background-color: white;
+    height: 50px;
+    width: 320px;
+    border: 3px solid #00a2ff;
+    transition: background-color 1s ease;
+}
+button:hover{
+    background-color: #00a2ff;
+    height: 50px;
+    width: 320px;
+    color: white;
+    cursor: pointer;
+}

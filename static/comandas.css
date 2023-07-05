@@ -1,0 +1,53 @@
+body{
+    background: linear-gradient(to bottom, #000000, #068FFF);
+}
+
+.container {
+    display: grid;
+    grid-gap: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .comandas {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(0, 0, 0);
+    background-color: white;
+  }
+  
+  .mesa {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px;
+  }
+  
+  .itens {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .quantidade {
+    width: 40px;
+  }
+  
+  .total {
+    font-size: 30px;
+    margin-top: 10px;
+  }
+  
+  h2{
+    font-size: 30px;
+    margin-top: 10px;
+    text-align: center;
+  }

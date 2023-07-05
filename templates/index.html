@@ -1,0 +1,38 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Bistro LongBar</title>
+    <link rel="stylesheet" href="static\home.css">
+</head>
+<body>
+
+    {% set mensagem = get_flashed_messages() %}
+    {% if mensagem %}
+
+        <div class="flash_alerta">
+            {{mensagem[0]}}
+        </div>
+    {% endif %}
+
+    <div class="container">
+        <h1> - Bistro LongBar - </h1>
+        <div id="form_frente">
+            <form action="/home" id="home" method="post">
+                <div class="nome_atendente">
+                    <label for="usuario">Atendente:</label>
+                    <input type="text" name="atendente" id="atendente" required placeholder="Nome do atendente?"><br><br>
+                </div>
+                <div class="valor_inicial">
+                    <label for="usuario">Valor inicial:</label>
+                    <input type="number" name="Valor" id="Valor" required placeholder="Quanto tem no caixa?"><br><br>
+                </div>
+                <button type="submit" class="abrir_caixa" onclick="location.href='/mesas'">Abrir Caixa</button>
+            </form>
+        </div>
+    </div>
+    
+
+</body>
+</html>
